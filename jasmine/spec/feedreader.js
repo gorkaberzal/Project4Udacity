@@ -73,7 +73,7 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-          it('visiblility on and off', function() {
+          it('visibility on and off', function() {
             const body = document.querySelector('body');
             const menu = document.querySelector('.menu-icon-link');
 
