@@ -27,12 +27,11 @@ $(function() {
         });
 
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-         */
 
-         //it has been added
+        /* Test that loops through each feed
+         * in the allFeeds object and ensures it has a URL defined
+         * and that the URL is not empty.*/
+
          it('url defined', function() {
            for (let feed of allFeeds) {
              expect(feed.url).toBeDefined();
@@ -41,12 +40,10 @@ $(function() {
          });
 
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
+         /* Test that loops through each feed in the
+          * allFeeds object and ensures it has a name defined
+          * and that the name is not empty.*/
 
-         //it has been added
          it('name defined', function() {
            for (let feed of allFeeds) {
              expect(feed.name).toBeDefined();
@@ -56,52 +53,49 @@ $(function() {
     });
 
 
-    /* TODO: Write a new test suite named "The menu" */
+    /* Test suite named "The Menu" */
    describe('The menu', function(){
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
-         */
+     /* Test that ensures the menu element is
+      * hidden by default.*/
          it('is hidden', function() {
            const body = document.querySelector('body');
            expect(body.classList.contains('menu-hidden')).toBe(true);
          });
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
+         /* Test that ensures the menu changes
+          * visibility when the menu icon is clicked. Has
+          * two expectations: Does the menu display when
+          * clicked? Does it hide when clicked again?*/
           it('visibility on and off', function() {
             const body = document.querySelector('body');
             const menu = document.querySelector('.menu-icon-link');
 
             menu.click();
             expect(body.classList.contains('menu-hidden')).toBe(false);
+            menu.click();
+            expect(body.classList.contains('menu-hidden')).toBe(true);
           });
     });
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+     /* Test suite named "Initial Entries" */
     describe('Ininial Entries', function() {
-        /* TODO: Write a test that ensures when the loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
-         */
+        /* Test that ensures when the loadFeed function
+         * is called and completes its work, there is at least
+         * a single .entry element within the .feed container */
          beforeEach(function(done) {
            loadFeed(0, done);
            // console.log(feed.children[0].innerText);
            // loadFeed(1, done);
          });
 
-         it('completes work', function(){
-           const feed = document.querySelector('.feed');
-           expect(feed.children.length > 0).toBe(true);
+         it('completes work when feed contains more than 0 entries', function(){
+           var feed = document.querySelectorAll('.feed .entry').length;
+           expect(feed).toBeGreaterThan(0);
+           // expect(feed > 0).toBe(true);
+           // expect(document.querySelectorAll('.parent .child'));
          });
     });
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    /* Test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
     var oldFeed;
     var newFeed;
