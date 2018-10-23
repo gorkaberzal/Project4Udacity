@@ -46,3 +46,60 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 19. Implement error handling for undefined variables and out-of-bound array access.
 20. When complete - all of your tests should pass. 
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+
+Skills: JavaScript, Jasmine, JavaScript testing frameworks
+
+As a part of Udacity's FEND program, this project is about completing test suites for a web-based application that reads RSS feeds. The original incomplete project already included Jasmine and the first test suite. The aim is to complete all the testing suites that makes sure the application behaves as desired.
+
+Checkout Live Site
+Getting it running
+
+1. Clone or download the repository into your working directory
+
+$> cd /path/to/your-project-folder
+$> git clone https://github.com/gorkaberzal/Project4Udacity.git
+
+2. Open index.html file on your browser
+
+
+Project Preparations
+Downloaded the required project assets.
+Checked how the application actually works on my browser.
+Examined the application's HTML(./index.html), CSS(./css/style.css) and JavaScript(./js/app/js) files in detail to understand the structure of the application.
+Read Jasmine documentaiton for version 2.1 as this version is used for the application.
+
+Test Suites Description
+
+Test Suite 1: RSS Feeds
+
+Checks that the allFeeds object is defined and not empty.
+Checks that each feed has a non-empty URL defined.
+Checks that each feed has a non-empty name defined.
+
+Test Suite 2: The menu
+
+Checks that the menu slider is hidden by default.
+Checks that the menu slider properly shows up when the menu icon is clicked.
+Checks that the menu slider is hidden when the menu icon is clicked again.
+
+Test Suite 3: Initial Entries
+
+Checks that the loadFeed properly loads the first feed ('Udacity Blog') by checking that there is at least one .entry element within the .feed container.
+
+Test Suite 4: New Feed Selection
+
+Before each test cases, initially the first feed is displayed and then swithced to the prospective feeds.
+
+Checks that the content changes and the title is updated when 'CSS Tricks' feed is loaded.
+Checks that the content changes and the title is updated when 'HTML5 Rocks' feed is loaded.
+Checks that the content changes and the title is updated when 'Linear Digressions' feed is loaded.
+Checks that the content changes and the title is updated when 'CNET News' feed is loaded.
+Checks that the content changes and the title is updated when 'TechCrunch Startups' feed is loaded.
+
+References and Resources
+Required Project Assets
+Jasmine Documentation
+Udacity's JavaScript Testing course
+Contact
+Gorka Berzal
+e-mail: gorka.berzal@gmail.com
